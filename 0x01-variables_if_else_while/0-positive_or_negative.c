@@ -2,13 +2,13 @@
 #include <time.h>
 #include <stdio.h>
 /*
- * Description: checks if the var n is 0 or bigger,
+ * main - checks if the var n is 0 or bigger,
  * or less than 0 and print it
  */
 int main(void)
 {
 	int n;
-
+	/*n variable*/
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
