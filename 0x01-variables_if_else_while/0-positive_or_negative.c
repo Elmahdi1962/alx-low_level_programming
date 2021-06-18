@@ -2,8 +2,6 @@
 #include <time.h>
 #include <stdio.h>
 /*
- * main: entry point
- *
  * Description: checks if the var n is 0 or bigger,
  * or less than 0 and print it
  */
