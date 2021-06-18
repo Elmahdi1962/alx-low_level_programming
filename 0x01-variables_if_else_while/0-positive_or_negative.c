@@ -1,9 +1,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/* more headers goes there */
-
-/* betty style doc for function main goes there */
+/*
+ * main: entry point
+ *
+ * Description: checks if the var n is 0 or bigger,
+ * or less than 0 and print it
+ */
 int main(void)
 {
 	int n;
