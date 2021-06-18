@@ -1,14 +1,15 @@
 #include <stdlib.h>
 #include <time.h>
 #include <stdio.h>
-/*
- * main - checks if the var n is 0 or bigger,
- * or less than 0 and print it
+/**
+ * main - generates random number and displays whether number
+ * is positive, zero, or negative
+ * Return: 0
  */
 int main(void)
 {
 	int n;
-	/*n variable*/
+        
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 
