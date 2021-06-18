@@ -6,9 +6,10 @@
  * Return: 0
  */
 
-int main()
+int main(void)
 {
 	int a;
+
 	a = 'a';
 
 	while (a < 'z')
@@ -16,5 +17,7 @@ int main()
 		putchar(a);
 		a++;
 	}
+	putchar('\n');
+
 	return (0);
 }
