@@ -21,16 +21,19 @@ int main(void)
 			{
 				for (j = 48 ; j < 58 ; j++)
 				{
-					putchar(i);
-					putchar(n);
-					putchar(j);
-					if (i == 55 && n ==56 && j == 57)
+					if (j > n)
 					{
-						break;
-					}
+						putchar(i);
+						putchar(n);
+						putchar(j);
+						if (i == 55 && n == 56 && j == 57)
+						{
+							break;
+						}
 
-					putchar(',');
-					putchar(' ');
+						putchar(',');
+						putchar(' ');
+					}
 				}
 			}
 		}
