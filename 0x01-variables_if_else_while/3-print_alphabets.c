@@ -6,7 +6,7 @@
  * Return: 0
  */
 
-int main(vois)
+int main(void)
 {
 	int a;
 	int A;
