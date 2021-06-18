@@ -23,14 +23,14 @@ int main(void)
 				if (i == 56 && n == 57)
 				{
 					break;
-				} else
-				{
-					putchar(',');
-					putchar(' ');
 				}
+
+				putchar(',');
+				putchar(' ');
 			}
 		}
 	}
+	putchar('\n');
 
 	return (0);
 }
