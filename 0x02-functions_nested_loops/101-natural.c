@@ -10,7 +10,7 @@
 
 int main(void)
 {
-	int result5, result3, i, tmp5, tmp3;
+	int result5, result3, i, tmp5, tmp3, sum;
 
 	for (i = 1; i < 1024; i++)
 	{
@@ -32,6 +32,7 @@ int main(void)
 		}
 
 	}
-	printf("%d", result5);
+	sum = result5 + result3
+	printf("%d", sum);
 	return (1);
 }
