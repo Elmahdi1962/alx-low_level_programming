@@ -20,7 +20,7 @@ void jack_bauer(void)
 			if (m == 60)
 			{
 				_putchar(((h + 1) / 10) + 48);
-				_putchar(((h + 1) / 10) + 48);
+				_putchar(((h + 1) % 10) + 48);
 				_putchar(':');
 				_putchar('0');
 				_putchar('0');
@@ -28,10 +28,10 @@ void jack_bauer(void)
 			} else
 			{
 				_putchar((h / 10) + 48);
-				_putchar((h / 10) + 48);
+				_putchar((h % 10) + 48);
 				_putchar(':');
 				_putchar((m / 10) + 48);
-				_putchar((m / 10) + 48);
+				_putchar((m % 10) + 48);
 				_putchar('\n');
 			}
 		}
