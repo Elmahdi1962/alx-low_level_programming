@@ -23,7 +23,7 @@ void jack_bauer(void)
 	{
 		for (m = 1; m <= 60; m++)
 		{
-			if (m == 60
+			if (m == 60)
 			{
 				_putchar(((h + 1) / 10) + 48);
 				_putchar(((h + 1) % 10) + 48);
