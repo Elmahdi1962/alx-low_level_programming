@@ -7,14 +7,15 @@
  */
 int main(void)
 {
-	long int i = 1, f1 = 0, f2 = 1, tmp;
+	long int i = 1, f1 = 1, f2 = 2, tmp;
 
 	while (i < 98)
 	{
+		printf("%li, ", f1);
 		tmp = f1 + f2;
 		f1 = f2;
 		f2 = tmp;
-		printf("%li, ", f1);
+
 		i++;
 	}
 	printf("\n");
