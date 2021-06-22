@@ -7,20 +7,15 @@
  */
 int main(void)
 {
-	int i = 1;
-	unsigned long int a = 1, b = 2, next = 0;
+	long int f1 = 1, f2 = 2, sum = f2, tmp;
 
-	while (i < 98)
+	while (f2 < 98)
 	{
-		next = a + b;
-		a = b;
-		b = next;
-		printf("%lu", a);
-
-		if (i < 97)
-			printf(", ");
-		i++;
+		tmp = f1 + f2;
+		f1 = f2;
+		f2 = tmp;
+		printf("%li, ", f2);
 	}
-	putchar('\n');
+	printf("\n");
 	return (0);
 }
