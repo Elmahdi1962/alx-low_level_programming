@@ -12,58 +12,20 @@
 
 void print_to_98(int n)
 {
-	int t;
+	int i;
 
-	t = 98;
-
-	if (n < t)
+	if (n <= 98)
 	{
-		while (n < t)
+		for (i = n; i < 98; i++)
 		{
-			if (n > 9 || n < -9)
-			{
-
-				_putchar((n / 10) + 48);
-				_putchar((n % 10) + 48);
-				_putchar(',');
-				_putchar(' ');
-
-			} else
-			{
-
-				_putchar(n + 48);
-				_putchar(',');
-				_putchar(' ');
-
-			}
-			n++;
+			printf("%i, ", i);
 		}
-		_putchar((n / 10) + 48);
-		_putchar((n % 10) + 48);
-	}else
+	} else
 	{
-			while (n > t)
+		for (i = n; i > 98; i--)
 		{
-			if (n > 9 || n < -9)
-			{
-
-				_putchar((n / 10) + 48);
-				_putchar((n % 10) + 48);
-				_putchar(',');
-				_putchar(' ');
-
-			} else
-			{
-
-				_putchar(n + 48);
-				_putchar(',');
-				_putchar(' ');
-
-			}
-			n--;
+			printf("%i, ", i);
 		}
-		_putchar((n / 10) + 48);
-		_putchar((n % 10) + 48);
-		_putchar('\n');
 	}
+	printf("98\n");
 }
