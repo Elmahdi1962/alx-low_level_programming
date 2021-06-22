@@ -9,6 +9,18 @@ int main(void)
 {
 	unsigned long i = 0, f1 = 1, f2 = 2, tmp;
 
+	while (i < 94)
+	{
+		printf("%lu", f1);
+		tmp = f1 + f2;
+		f1 = f2;
+		f2 = tmp;
+		if(i < 98)
+		{
+            printf(",  ");
+		}
+		i++;
+	}
 	while (i < 99)
 	{
 		printf("%lu", f1);
@@ -21,6 +33,7 @@ int main(void)
 		}
 		i++;
 	}
+	
 	printf("\n");
 	return (0);
 }
