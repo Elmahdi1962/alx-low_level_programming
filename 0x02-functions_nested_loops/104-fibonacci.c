@@ -15,6 +15,7 @@ int main(void)
 		f1 = f2;
 		f2 = tmp;
 		printf("%li, ", f2);
+		i++;
 	}
 	printf("\n");
 	return (0);
