@@ -24,17 +24,16 @@ void print_times_table(int n)
 				{
 					_putchar(' ');
 					_putchar(' ');
-					_putchar((r / 10) + 48);
-					_putchar((r % 10) + 48);
+					printf("%d", r);
 				} else if (j != 0)
 				{
 					_putchar(' ');
 					_putchar(' ');
 					_putchar(' ');
-					_putchar(r + 48);
+				        printf("%d", r);
 				} else
 				{
-					_putchar(r + 48);
+				        printf("%d", r);
 				}
 				if (j != n)
 				{
