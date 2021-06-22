@@ -12,9 +12,9 @@ int print_last_digit(int n)
 {
 	int i;
 
-	i = n % 10;
+	i = _abs(n);
 
-	_putchar(i);
+	_putchar((i%10)+48);
 
-	return (n % 10);
+	return (i % 10);
 }
