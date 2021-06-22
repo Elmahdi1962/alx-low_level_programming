@@ -36,7 +36,7 @@ void print_times_table(int n)
 				{
 					_putchar(r + 48);
 				}
-				if (j != 9)
+				if (j != n)
 				{
 				        _putchar(',');
 				}
