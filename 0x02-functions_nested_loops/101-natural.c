@@ -32,7 +32,7 @@ int main(void)
 		}
 
 	}
-	sum = result5 + result3
+	sum = result5 + result3;
 	printf("%d", sum);
 	return (1);
 }
