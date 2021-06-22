@@ -33,6 +33,6 @@ int main(void)
 
 	}
 	sum = result5 + result3;
-	printf("%d", sum);
+	printf("%d---%d--- %d", result5, result3, sum);
 	return (1);
 }
