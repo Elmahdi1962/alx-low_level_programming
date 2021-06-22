@@ -7,9 +7,9 @@
  */
 int main(void)
 {
-	long int f1 = 1, f2 = 2, tmp;
+	long int i = 1, f1 = 1, f2 = 2, tmp;
 
-	while (f2 < 98)
+	while (i < 98)
 	{
 		tmp = f1 + f2;
 		f1 = f2;
