@@ -4,10 +4,9 @@
  * print_to_98 -  prints all natural numbers from n to 98,
  * followed by a new line.
  *
- * @s: number to add
- * @n: number to add
+ * @n: number to start from
  *
- * Return: result
+ * Return: void
  */
 
 void print_to_98(int n)
