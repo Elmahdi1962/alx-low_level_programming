@@ -9,8 +9,8 @@ int main(void)
 	int i, l;
 	long n1, n2, next;
 
-	f1 = 1;
-	f2 = 2;
+	n1 = 1;
+	n2 = 2;
 	l = 50;
 
 	for (i = 0; i < l; i++)
