@@ -8,7 +8,7 @@
  * Return: void
  */
 
-void main(void)
+int main(void)
 {
 	int result5, result3, i, tmp5, tmp3;
 
@@ -33,4 +33,5 @@ void main(void)
 
 	}
 	printf("%d", (result5 + result3));
+	return (1);
 }
