@@ -9,13 +9,13 @@ int main(void)
 {
 	unsigned long i = 0, f1 = 1, f2 = 2, tmp;
 
-	while (i < 101)
+	while (i < 99)
 	{
 		printf("%lu", f1);
 		tmp = f1 + f2;
 		f1 = f2;
 		f2 = tmp;
-		if(i < 100)
+		if(i < 98)
 		{
             printf(",  ");
 		}
