@@ -20,7 +20,10 @@ void print_times_table(int n)
 			{
 				r = (j * i);
 
-				if (r > 9)
+				if (r > 99)
+				{
+					printf(" %d", r);
+				} else if (r > 9)
 				{
 					printf("  %d", r);
 				} else if (j != 0)
