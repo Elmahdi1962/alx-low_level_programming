@@ -28,14 +28,14 @@ void print_times_table(int n)
 					printf("  %d", r);
 				} else if (j != 0)
 				{
-				        printf("   %d", r);
+					printf("   %d", r);
 				} else
 				{
-				        printf("%d", r);
+					printf("%d", r);
 				}
 				if (j != n)
 				{
-				        printf(",");
+					printf(",");
 				}
 			}
 			printf("\n");
