@@ -22,25 +22,20 @@ void print_times_table(int n)
 
 				if (r > 9)
 				{
-					_putchar(' ');
-					_putchar(' ');
-					printf("%d", r);
+					printf("  %d", r);
 				} else if (j != 0)
 				{
-					_putchar(' ');
-					_putchar(' ');
-					_putchar(' ');
-				        printf("%d", r);
+				        printf("   %d", r);
 				} else
 				{
 				        printf("%d", r);
 				}
 				if (j != n)
 				{
-				        _putchar(',');
+				        printf(",");
 				}
 			}
-			_putchar('\n');
+			printf("\n");
 		}
 	}
 }
