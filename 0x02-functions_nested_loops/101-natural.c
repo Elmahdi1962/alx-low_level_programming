@@ -5,7 +5,7 @@
  * of 3 or 5 below 1024 (excluded)
  *
  *
- * Return: void
+ * Return: 1
  */
 
 int main(void)
@@ -32,6 +32,6 @@ int main(void)
 		}
 
 	}
-	printf("%d", (result5 + result3));
+	printf("%d", result5);
 	return (1);
 }
