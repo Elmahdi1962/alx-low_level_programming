@@ -14,11 +14,7 @@ void print_number(int n)
 
 	x = n;
 
-	if (n < 0)
-	{
-		_putchar('-');
-		x = -n;
-	}
+
 
 	if (x / 10)
 		print_number(x / 10);
