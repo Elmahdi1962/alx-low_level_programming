@@ -9,11 +9,11 @@
 
 void print_most_numbers(void)
 {
-	int i = 0, j = 0;
+	int i = 0, j;
 
 	while (i < 10)
 	{
-		while (j < 15)
+	        for (j =0; j < 15; j++)
 		{
 			if (j > 10)
 			{
@@ -21,7 +21,7 @@ void print_most_numbers(void)
 			}
 
 			_putchar((j % 10) + 48);
-			j++;
+ 
 		}
 		_putchar('\n');
 		i++;
