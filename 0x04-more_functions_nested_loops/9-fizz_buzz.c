@@ -6,7 +6,7 @@
  * Return: always 0
  */
 
-int main(void);
+int main(void)
 {
 	int i;
 
@@ -28,4 +28,5 @@ int main(void);
 			printf("%i ", i);
 		}
 	}
+	return (0);
 }
