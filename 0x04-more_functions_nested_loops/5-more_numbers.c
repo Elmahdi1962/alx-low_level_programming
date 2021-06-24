@@ -1,8 +1,8 @@
 #include "holberton.h"
 
 /**
- * print_most_numbers - print numbers from 0 ot 9 followed
- * by a new line but do not print 2 and 4.
+ * print_most_numbers - prints 10 times the numbers,
+ * from 0 to 14, followed by a new line..
  *
  * Return: Void
  */
@@ -13,7 +13,7 @@ void print_most_numbers(void)
 
 	while (i < 10)
 	{
-	        for (j =0; j < 15; j++)
+	        for (j = 0; j < 15; j++)
 		{
 			if (j > 9)
 			{
