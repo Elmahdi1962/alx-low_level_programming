@@ -10,20 +10,25 @@
 
 void print_triangle(int size)
 {
-	int i = 0, s = 0;
+	int i = 0, s = 0, n = size;
 
 	if (size > 0)
 	{
 		while (i < size)
 		{
-			while (s < size)
+			while (s < n - 1)
 			{
 				_putchar(' ');
 				s++;
 			}
-			_putchar('#');
+			while (n <= size)
+			{
+				_putchar('#');
+				n++;
+			}
 			_putchar('\n');
 			i++;
+			n = size - i;
 			s =  0;
 		}
 	} else
