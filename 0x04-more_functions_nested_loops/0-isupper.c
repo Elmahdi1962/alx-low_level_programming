@@ -1,5 +1,4 @@
 #include 'holberton.h'
-#include <ctype.h>
 
 /**
  * _isupper - checks for uppercase character.
@@ -12,5 +11,5 @@
 
 int _isupper(int c)
 {
-	return (isupper(c));
+	return (c >= 65 && c <= 90);
 }
