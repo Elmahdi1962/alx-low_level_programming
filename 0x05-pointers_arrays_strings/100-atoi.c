@@ -11,7 +11,7 @@
 
 int _atoi(char *s)
 {
-	int i = 0, multiplier = 1, first_digit, last_digit, sign = 1;
+	int i = 0, multiplier = 1, first_digit = -1, last_digit = -1, sign = 1;
 	unsigned int number = 0;
 
 	/*we loop thru the string*/
@@ -41,7 +41,7 @@ int _atoi(char *s)
 		i++;
 	}
 	/*if not digits found exit with 0*/
-	if (first_digit == NULL && last_digit == NULL)
+	if (first_digit == -1 && last_digit == -1)
 	{
 		return (0);
 	}
