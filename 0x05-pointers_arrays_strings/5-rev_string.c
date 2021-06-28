@@ -11,7 +11,7 @@
 void rev_string(char *s)
 {
         int length = 0;
-	char arr[] = *s;
+	char arr[] = s;
         while (*s != 0)
         {
                 length++;
@@ -23,7 +23,7 @@ void rev_string(char *s)
 
 	while (length > 0)
 	{
-		s = arr[length-1];
+		*s = arr[length-1];
                 length--;
 		s++;
         }
