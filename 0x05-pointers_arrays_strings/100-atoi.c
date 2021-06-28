@@ -27,12 +27,12 @@ int _atoi(char *s)
 		if (*(s + i) > 47 && *(s + i) < 58)
 		{
 			/* we check is it's the first digit */
-			if (*(s - 1) < 48 || *(s - 1) > 57)
+			if (!(*(s + i - 1) > 47 && *(s + i - 1) < 58))
 			{
 				first_digit = i;
 			}
 			/* we check if it's the last digit */
-			if (*(s + 1) < 48 || *(s + 1) > 57)
+			if (!(*(s + i + 1) > 47 && *(s + i + 1) < 58))
 			{
 				last_digit = i;
 				break;
