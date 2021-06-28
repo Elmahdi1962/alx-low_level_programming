@@ -11,7 +11,7 @@
 
 int _atoi(char *s)
 {
-	int i = 0, multiplier = 1, firs_digit, last_digit, sign = 1;
+	int i = 0, multiplier = 1, first_digit, last_digit, sign = 1;
 	unsigned int number = 0;
 
 	/*we loop thru the string*/
