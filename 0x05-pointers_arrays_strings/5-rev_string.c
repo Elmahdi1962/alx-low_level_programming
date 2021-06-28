@@ -17,14 +17,15 @@ void rev_string(char *s)
                 length++;
                 s++;
 	}
+	int const i = length;
 	char arr[length];
-	int i = length;
+
 	/*reset the pointer to point to the first element*/
 	s = s - length;
 
 	while (length > 0)
 	{
-		arr[i - length] = *(s + length)
+		arr[i - length] = *(s + length);
                 length--;
         }
 
