@@ -8,6 +8,20 @@
  * Return: void
  */
 
+int _strlen(char *s)
+{
+	int counter = 0;
+
+	while (*s != 0)
+	{
+		counter++;
+		s++;
+	}
+
+	return (counter);
+}
+
+
 void puts_half(char *str)
 {
 	int length = _strlen(str), i;
