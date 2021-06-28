@@ -17,8 +17,8 @@ void rev_string(char *s)
                 length++;
                 s++;
 	}
-	int const i = length;
-	char arr[length];
+	int i = length;
+	char arr[i];
 
 	/*reset the pointer to point to the first element*/
 	s = s - length;
