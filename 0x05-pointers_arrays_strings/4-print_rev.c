@@ -17,10 +17,11 @@ void print_rev(char *s)
 		length++;
 		s++;
 	}
-
+	s = *(s+length);
 	while (length > 0)
 	{
-		_putchar(*(s+length));
+		_putchar(*s);
 		length--;
+		s--;
 	}
 }
