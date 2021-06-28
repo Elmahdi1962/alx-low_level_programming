@@ -20,7 +20,7 @@ void rev_string(char *s)
 	}
 /*reset the pointer to point to the first element*/
 	s = s - length;
-	n = length;
+	n = length - 1;
 	for (i = 0; i < length / 2; i++)
 	{
 		tmp = *(s + i);
