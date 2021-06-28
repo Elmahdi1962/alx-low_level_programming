@@ -40,7 +40,11 @@ int _atoi(char *s)
 		}
 		i++;
 	}
-
+	/*if not digits found exit with 0*/
+	if (first_digit == null && last_digit == null)
+	{
+		return (0);
+	}
 	/* find how many digits the number has */
 	i = first_digit;
 	while (i < last_digit)
