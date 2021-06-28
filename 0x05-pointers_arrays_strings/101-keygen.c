@@ -9,8 +9,7 @@
 
 int main(void)
 {
-int num;
-  /*char pass;
+        char pass;
 	int comb;
 
 	srand(time(NULL));
@@ -18,9 +17,5 @@ int num;
 	while (comb <= 2645)
 		pass = rand() % 128, comb += pass, putchar(pass);
 	putchar(2772 - comb);
-	return (0);*/
-srand(time(0));
-num = rand();
-printf("%i\n",num);
-return (0);
+	return (0);
 }
