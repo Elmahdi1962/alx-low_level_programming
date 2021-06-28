@@ -12,35 +12,13 @@
 void print_array(int *a, int n)
 {
 	int i;
-	int length = _strlen(a);
+
 	for (i = 0 ; i < n; i++)
 	{
 		printf("%d", *(a + i));
-		if ( i != (length - 1))
+		if ( i != (n - 1))
 		{
 			printf(", ");
 		}
 	}
-}
-
-
-/**
- * _strlen - return length of a string
- *
- * @s: var to check (array of chars)
- *
- * Return: the length of the string (int)
- */
-
-int _strlen(int *s)
-{
-        int counter = 0;
-
-        while (*s != 0)
-        {
-                counter++;
-                s = s + 4;
-        }
-	s = s - (4 * counter);
-        return (counter);
 }
