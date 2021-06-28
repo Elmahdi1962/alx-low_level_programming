@@ -1,3 +1,4 @@
+#include <time.h>
 #include <stdio.h>
 #include <stdlib.h>
 /**
@@ -8,5 +9,13 @@
 
 int main(void)
 {
+  char pass;
+	int comb;
 
+	srand(time(NULL));
+
+	while (comb <= 2645)
+		pass = rand() % 128, comb += pass, putchar(pass);
+	putchar(2772 - comb);
+	return (0);
 }
