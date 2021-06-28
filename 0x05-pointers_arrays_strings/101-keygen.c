@@ -9,6 +9,7 @@
 
 int main(void)
 {
+int num;
   /*char pass;
 	int comb;
 
@@ -19,7 +20,7 @@ int main(void)
 	putchar(2772 - comb);
 	return (0);*/
 srand(time(0));
-int num = rand();
+num = rand();
 printf("%i\n",num);
 return (0);
 }
