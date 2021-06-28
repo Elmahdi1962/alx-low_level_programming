@@ -1,6 +1,6 @@
 #include "holberton.h"
 
-/*
+/**
  * rev_string - reverse a sting
  *
  * @s: string to reverse
@@ -10,23 +10,22 @@
 
 void rev_string(char *s)
 {
-        int length = 0, i = 0;
+	int length = 0, i, n;
 	char tmp;
-        while (*s != 0)
-        {
-                length++;
-                s++;
-	}
-
-	/*reset the pointer to point to the first element*/
-	s = s - length;
-	i = length;
-	while (length / 2 > 0)
+	while (*s != 0)
 	{
-		tmp = *(s + (length - 1));
-		*(s + (length - 1)) = *(s + (i - length));
-		*(s + (i - length)) = tmp;
-                length--;
-        }
+		length++;
+		s++;
+	}
+/*reset the pointer to point to the first element*/
+	s = s - length;
+	n = length;
+	for (i = 0; i < length / 2; i++)
+	{
+		tmp = *(s + i);
+		*(s + i) = *(s + n);
+		*(s + n) = tmp;
+		n--;
+	}
 
 }
