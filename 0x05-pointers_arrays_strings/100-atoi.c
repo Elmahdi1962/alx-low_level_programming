@@ -41,7 +41,7 @@ int _atoi(char *s)
 		i++;
 	}
 	/*if not digits found exit with 0*/
-	if (first_digit == null && last_digit == null)
+	if (first_digit == NULL && last_digit == NULL)
 	{
 		return (0);
 	}
