@@ -14,7 +14,7 @@ int main(void)
 
 	srand(time(NULL));
 
-	while (comb <= 2645)
+	while (comb <= 2772)
 		pass = rand() % 128, comb += pass, putchar(pass);
 	putchar(2772 - comb);
 	return (0);
