@@ -10,8 +10,8 @@
 
 void rev_string(char *s)
 {
-        int length = 0;
-	char arr[] = s;
+        int length = 0, i = 0;
+	char tmp;
         while (*s != 0)
         {
                 length++;
@@ -20,12 +20,13 @@ void rev_string(char *s)
 
 	/*reset the pointer to point to the first element*/
 	s = s - length;
-
-	while (length > 0)
+	i = length;
+	while (length / 2 > 0)
 	{
-		*s = arr[length-1];
+		tmp = *(s + (length - 1));
+		*(s + (length - 1)) = *(s + (i - length));
+		*(s + (i - length)) = temp
                 length--;
-		s++;
         }
 
 }
