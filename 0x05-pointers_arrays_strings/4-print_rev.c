@@ -18,7 +18,7 @@ void print_rev(char *s)
 		s++;
 	}
 	s = (s + (length - 1));
-	printf("%d::%d::%c", s, length, *s);
+	printf("%d::%c", length, *s);
 	while (length > 0)
 	{
 		_putchar(*s);
