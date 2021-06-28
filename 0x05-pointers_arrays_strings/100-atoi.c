@@ -8,48 +8,55 @@
  * Return: int
  */
 
-int toString(char []);
 
 int _atoi(char *s)
 {
-char a[100];
-  int n;
+	int i = 0, multiplier = 1, firs_digit, last_digit, sign = 1;
+	unsigned int number = 0;
 
-  printf("Input a valid string to convert to integer\n");
-  scanf("%s", a);
+	/*we loop thru the string*/
+	while (*(s + i) != 0)
+	{
+		/*we check first for a sigh if it exist*/
+		if (*(s + i) == '-')
+		{
+			sign *= -1;
+		}
 
-  n = toString(a);
+		/* check for numbers if they exist */
+		if (*(s + i) > 47 && *(s + i) < 58)
+		{
+			/* we check is it's the first digit */
+			if (*(s - 1) < 48 || *(s - 1) > 57)
+			{
+				first_digit = i;
+			}
+			/* we check if it's the last digit */
+			if (*(s + 1) < 48 || *(s + 1) > 57)
+			{
+				last_digit = i;
+				break;
+			}
+		}
+		i++;
+	}
 
-  printf("String  = %s\nInteger = %d\n", a, n);
+	/* find how many digits the number has */
+	i = first_digit;
+	while (i < last_digit)
+	{
+		multiplier *= 10;
+		i++;
+	}
+	/*finding teh whole number*/
+	i = first_digit;
+	while (i <= last_digit)
+	{
+		number += (*(s + i) - '0') * multiplier;
+		multiplier /= 10;
+		i++;
+	}
+	number *= sign;
 
-  return 0;
-}
-
-
-
-int toString(char a[]) {
-  int c, sign, offset, n;
-
-  if (a[0] == '-') {  // Handle negative integers
-    sign = -1;
-  }
-
-  if (sign == -1) {  // Set starting position to convert
-    offset = 1;
-  }
-  else {
-    offset = 0;
-  }
-
-  n = 0;
-
-  for (c = offset; a[c] != '\0'; c++) {
-    n = n * 10 + a[c] - '0';
-  }
-
-  if (sign == -1) {
-    n = -n;
-  }
-
-  return n;
+	return (number);
 }
