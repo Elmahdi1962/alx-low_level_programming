@@ -13,7 +13,7 @@ void print_array(int *a, int n)
 {
 	int i;
 	int length = _strlen(a);
-	for (i = 0 ; i < length; i++)
+	for (i = 0 ; i < n; i++)
 	{
 		printf("%d", *(a + i));
 		if ( i != (length - 1))
@@ -32,7 +32,7 @@ void print_array(int *a, int n)
  * Return: the length of the string (int)
  */
 
-int _strlen(char *s)
+int _strlen(int *s)
 {
         int counter = 0;
 
