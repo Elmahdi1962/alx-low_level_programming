@@ -3,7 +3,7 @@
 /**
  * reset_to_98 - update value the pointer point to
  *
- * @*n: pointer
+ * @n: pointer
  *
  * Return: Void
  */
