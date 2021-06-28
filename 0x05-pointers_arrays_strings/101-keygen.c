@@ -9,13 +9,16 @@
 
 int main(void)
 {
-        char pass;
-	int comb;
+        int sum;
+	char c;
 
 	srand(time(NULL));
-
-	while (comb <= 2772)
-		pass = rand() % 128, comb += pass, putchar(pass);
-	putchar(2772 - comb);
+	while (sum <= 2645)
+	{
+		c = rand() % 128;
+		sum += c;
+		putchar(c);
+	}
+	putchar(2772 - sum);
 	return (0);
 }
