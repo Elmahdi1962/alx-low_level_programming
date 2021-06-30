@@ -9,7 +9,7 @@
  * @count: number of digits
  * Return: pointer string
  */
-char *int_to_str(unsigned long long int num, char *str, int count)
+char *int_to_str(unsigned long int num, char *str, int count)
 {
 	str[count] = '\0';
 	while (count > 0)
@@ -23,7 +23,7 @@ char *int_to_str(unsigned long long int num, char *str, int count)
 	}
 	return (str);
 
-
+}
 
 /**
  * str_to_int - convert str to int
@@ -34,11 +34,11 @@ char *int_to_str(unsigned long long int num, char *str, int count)
  */
 
 
-int str_to_int(char *s, l)
+int str_to_int(char *s, int l)
 {
 	int base = 1, tmp, i, number = 0;
 
-	for (i = l - 1; i <= 0; i--)
+	for (i = l - 1; i >= 0; i--)
 	{
 		tmp = s[i] - '0';
 		number += (tmp * base);
@@ -59,7 +59,7 @@ int str_to_int(char *s, l)
 int _strlen(char *s)
 {
 	int counter = 0;
-	char *n = s
+	char *n = s;
 
 	while (*n != 0)
 	{
@@ -82,12 +82,12 @@ int _strlen(char *s)
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int base = 1, i = 0, tmp, count = 0;
+	int count = 0;
 	int l1 = _strlen(n1), l2 = _strlen(n2);
-	unsigned long long int result, num1 = 0, num2 = 0;
+	unsigned long int result, num1 = 0, num2 = 0;
 
-	num1 = str_to_int(char n1, l1);
-	num2 = str_to_int(char n2, l2);
+	num1 = str_to_int(n1, l1);
+	num2 = str_to_int(n2, l2);
 	result = num1 + num2;
 
 	while (result > 0)
@@ -99,5 +99,5 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (count +1 > size_r)
 		return (0);
 	
-	return (*int_to_str(num1 + num2, *r, count));
+	return (int_to_str(num1 + num2, r, count));
 }
