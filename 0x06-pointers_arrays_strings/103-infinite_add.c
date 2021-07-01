@@ -1,61 +1,54 @@
 #include "holberton.h"
-
+#include <stdio.h>
 /**
- * infinite_add - Adds two numbers
- * @n1: The first number
- * @n2: The second number
- * @r: The buffer for storing the result
- * @size_r: The size of the buffer
- *
- * Return: If result can be stored in r, then r, otherwise 0
+ * infinite_add - adds two numbers
+ * @n1: number one.
+ * @n2: number two.
+ * @r: buffer that the function will use to store the result.
+ * @size_r: buffer size:
+ * Return: the pointer to dest.
  */
+
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int n1_len, n2_len, max_len, idx;
-	char n1_dig, n2_dig, carry, rem;
+	int c1 = 0, c2 = 0, op, bg, dr1, dr2, add = 0;
 
-	n1_len = n2_len = carry = rem = 0;
-	n1_dig = *n1;
-	n2_dig = *n2;
-	while (*(n1 + n1_len) != '\0')
-		n1_len++;
-	while (*(n2 + n2_len) != '\0')
-		n2_len++;
-
-	max_len = n1_len > n2_len ? n1_len : n2_len;
-	idx = max_len;
-	if (size_r < idx + 1)
+	while (*(n1 + c1) != '\0')
+		c1++;
+	while (*(n2 + c2) != '\0')
+		c2++;
+	if (c1 >= c2)
+		bg = c1;
+	else
+		bg = c2;
+	if (size_r <= bg + 1)
 		return (0);
-
-	*(r + idx) = '\0';
-	idx--;
-	n1_len--;
-	n2_len--;
-	while (idx >= 0)
+	r[bg + 1] = '\0';
+	c1--, c2--, size_r--;
+	dr1 = *(n1 + c1) - 48, dr2 = *(n2 + c2) - 48;
+	while (bg >= 0)
 	{
-		n1_dig = n1_len >= 0 ? *(n1 + n1_len) - '0' : 0;
-		n2_dig = n2_len >= 0 ? *(n2 + n2_len) - '0' : 0;
-		rem = (n1_dig + n2_dig + carry) % 10;
-		carry = (n1_dig + n2_dig + carry) / 10;
-		*(r + idx) = (char)(rem + '0');
-		n1_len--;
-		n2_len--;
-		idx--;
+		op = dr1 + dr2 + add;
+		if (op >= 10)
+			add = op / 10;
+		else
+			add = 0;
+		if (op > 0)
+		*(r + bg) = (op % 10) + 48;
+		else
+			*(r + bg) = '0';
+		if (c1 > 0)
+			c1--, dr1 = *(n1 + c1) - 48;
+		else
+			dr1 = 0;
+		if (c2 > 0)
+			c2--, dr2 = *(n2 + c2) - 48;
+		else
+			dr2 = 0;
+		bg--, size_r--;
 	}
-
-	if (carry > 0 && size_r >= max_len + 2)
-	{
-		for (idx = max_len + 1; idx > 0; idx--)
-		{
-			char right = *(r + idx);
-
-			*(r + idx) = *(r + idx - 1);
-			*(r + idx - 1) = right;
-		}
-		*(r + idx) = carry + '0';
+	if (*(r) == '0')
+		return (r + 1);
+	else
 		return (r);
-	}
-	if (carry > 0 && size_r < max_len + 2)
-		return (0);
-	return (r);
 }
