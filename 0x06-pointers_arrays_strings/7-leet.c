@@ -13,6 +13,7 @@ char *leet(char *s)
 	char letters[] = {'A', 'E', 'O', 'T', 'L'};
 	int numbers[] = {4, 3, 0, 7, 1};
 	int i;
+	char *c = s;
 
 	while (*s)
 	{
@@ -23,5 +24,5 @@ char *leet(char *s)
 		}
 		s++;
 	}
-	return (s);
+	return (c);
 }
