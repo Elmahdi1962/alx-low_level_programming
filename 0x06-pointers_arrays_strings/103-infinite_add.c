@@ -16,7 +16,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	size_r--, l1--, l2--;
 
-	if (bn + 1 > size_r)
+	if (bn >= size_r)
 		return (0);
 
 	r[bn + 1] = '\0';
