@@ -14,9 +14,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int l1 = _strlen(n1), l2 = _strlen(n2), bn = l1 > l2 ? l1 : l2;
 	int carry = 0, equation = 0;
 
-	size_r--, l1--, l2--;
+	l1--, l2--;
 
-	if (bn >= size_r)
+	if (bn + 2 > size_r)
 		return (0);
 
 	r[bn + 1] = '\0';
