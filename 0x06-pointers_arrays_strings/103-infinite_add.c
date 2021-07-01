@@ -1,103 +1,61 @@
 #include "holberton.h"
 
-
 /**
- * int_to_str - function to convert int to string
+ * infinite_add - Adds two numbers
+ * @n1: The first number
+ * @n2: The second number
+ * @r: The buffer for storing the result
+ * @size_r: The size of the buffer
  *
- * @num: integer to convert
- * @str: string to write to
- * @count: number of digits
- * Return: pointer string
+ * Return: If result can be stored in r, then r, otherwise 0
  */
-char *int_to_str(unsigned long int num, char *str, int count)
-{
-	str[count] = '\0';
-	while (count > 0)
-	{
-		if (count == 1)
-			str[count - 1] = '0' + num;
-		else
-			str[count - 1]  = '0' + (num % 10);
-		num /= 10;
-		count--;
-	}
-	return (str);
-
-}
-
-/**
- * str_to_int - convert str to int
- *
- * @s: string to convert
- *
- * Return: the int
- */
-
-
-int str_to_int(char *s, int l)
-{
-	int base = 1, tmp, i, number = 0;
-
-	for (i = l - 1; i >= 0; i--)
-	{
-		tmp = s[i] - '0';
-		number += (tmp * base);
-		base *= 10;
-	}
-	return (number);
-}
-
-/**
- * _strlen - return length of string
- *
- * @s: string to count
- *
- * Return: the size
- */
-
-
-int _strlen(char *s)
-{
-	int counter = 0;
-	char *n = s;
-
-	while (*n != 0)
-	{
-		counter++;
-		n++;
-	}
-	return (counter);
-}
-
-
-/**
- * *infinite_add - adds two numbers
- * @n1: numbera
- * @n2: number2
- * @r: where to store result
- * @size_r: r size
- * Return: pointer to result
- */
-
-
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int count = 0;
-	int l1 = _strlen(n1), l2 = _strlen(n2);
-	unsigned long int result, num1 = 0, num2 = 0;
+	int n1_len, n2_len, max_len, idx;
+	char n1_dig, n2_dig, carry, rem;
 
-	num1 = str_to_int(n1, l1);
-	num2 = str_to_int(n2, l2);
-	result = num1 + num2;
+	n1_len = n2_len = carry = rem = 0;
+	n1_dig = *n1;
+	n2_dig = *n2;
+	while (*(n1 + n1_len) != '\0')
+		n1_len++;
+	while (*(n2 + n2_len) != '\0')
+		n2_len++;
 
-	while (result > 0)
-	{
-		count++;
-		result /= 10;
-	}
-
-	if (count + 1 > size_r)
+	max_len = n1_len > n2_len ? n1_len : n2_len;
+	idx = max_len;
+	if (size_r < idx + 1)
 		return (0);
 
-	return (int_to_str(num1 + num2, r, count));
+	*(r + idx) = '\0';
+	idx--;
+	n1_len--;
+	n2_len--;
+	while (idx >= 0)
+	{
+		n1_dig = n1_len >= 0 ? *(n1 + n1_len) - '0' : 0;
+		n2_dig = n2_len >= 0 ? *(n2 + n2_len) - '0' : 0;
+		rem = (n1_dig + n2_dig + carry) % 10;
+		carry = (n1_dig + n2_dig + carry) / 10;
+		*(r + idx) = (char)(rem + '0');
+		n1_len--;
+		n2_len--;
+		idx--;
+	}
+
+	if (carry > 0 && size_r >= max_len + 2)
+	{
+		for (idx = max_len + 1; idx > 0; idx--)
+		{
+			char right = *(r + idx);
+
+			*(r + idx) = *(r + idx - 1);
+			*(r + idx - 1) = right;
+		}
+		*(r + idx) = carry + '0';
+		return (r);
+	}
+	if (carry > 0 && size_r < max_len + 2)
+		return (0);
+	return (r);
 }
