@@ -11,44 +11,47 @@
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int c1 = 0, c2 = 0, op, bg, dr1, dr2, add = 0;
+	int l1 = _strlen(n1), l2 = _strlen(n2), bn = l1 > l2 ? l1 : l2;
+	int carry = 0, equation = 0;
 
-	while (*(n1 + c1) != '\0')
-		c1++;
-	while (*(n2 + c2) != '\0')
-		c2++;
-	if (c1 >= c2)
-		bg = c1;
-	else
-		bg = c2;
-	if (size_r <= bg + 1)
+	size_r--;
+	l1--;
+	l2--;
+
+	if (bn + 1 > size_r)
 		return (0);
-	r[bg + 1] = '\0';
-	c1--, c2--, size_r--;
-	dr1 = *(n1 + c1) - 48, dr2 = *(n2 + c2) - 48;
-	while (bg >= 0)
+	r[bn + 1] = '\0';
+	for (; bn >= 0; size_r--, bn--, l1--, l2--)
 	{
-		op = dr1 + dr2 + add;
-		if (op >= 10)
-			add = op / 10;
-		else
-			add = 0;
-		if (op > 0)
-		*(r + bg) = (op % 10) + 48;
-		else
-			*(r + bg) = '0';
-		if (c1 > 0)
-			c1--, dr1 = *(n1 + c1) - 48;
-		else
-			dr1 = 0;
-		if (c2 > 0)
-			c2--, dr2 = *(n2 + c2) - 48;
-		else
-			dr2 = 0;
-		bg--, size_r--;
+		equation = carry;
+		if (carry)
+			carry = 0;
+		if (l1 >= 0)
+			equation += n1[l1] - '0';
+		if (l2 >= 0)
+			equation += n2[l2] - '0';
+		if (equation > 9)
+		{
+			equation %= 10;
+			carry = 1;
+		}
+		r[bn] = equation + '0';
 	}
-	if (*(r) == '0')
-		return (r + 1);
-	else
-		return (r);
+	return (r);
+}
+
+/**
+ * _strlen - counts length of string
+ * @str: string to check
+ * Return: the result number
+ */
+
+int _strlen(char *str)
+{
+	int i, counter = 0;
+
+	for (i = 0; str[i] != '\0'; i++)
+		counter++;
+
+	return (counter);
 }
