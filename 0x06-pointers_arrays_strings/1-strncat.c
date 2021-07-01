@@ -34,13 +34,25 @@ int _strlen(char *s)
 
 char *_strncat(char *dest, char *src, int n)
 {
-	int l = _strlen(dest), j = 0;
+	char *cat = dest + _strlen(dest);
+	int length;
 
-	while (j < n)
+	if (n > _strlen(src) + _strlen(dest))
+		length =  _strlen(dest) + _strlen(src);
+	else
+		length = _strlen(dest) + n;
+
+	while (*src && n > 0)
 	{
-		dest[l] = src[j];
-		j++;
-		l++;
+		*cat += *src;
+		src++;
+		cat++;
+		n--;
 	}
-	return (dest);
+	if (n > 0)
+		*cat += '\0';
+	cat -= (length);
+	*dest = *cat;
+
+	return (cat);
 }
