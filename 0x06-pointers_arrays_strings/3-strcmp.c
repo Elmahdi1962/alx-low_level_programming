@@ -11,14 +11,14 @@
 
 int _strlen(char *s)
 {
-        int counter = 0;
+	int counter = 0;
 
-        while (*s != 0)
-        {
-                counter++;
-                s++;
-        }
-        return (counter);
+	while (*s != 0)
+	{
+		counter++;
+		s++;
+	}
+	return (counter);
 }
 
 
@@ -30,10 +30,11 @@ int _strlen(char *s)
  * @s1: string 1
  * @s2: string 2
  *
- * Return: an integer less than, equal to, or 
+ * Return: an integer less than, equal to, or
  * greater than zero if s1 is found, respectively,
  * to be less than, to match, or be greater than s2.
  */
+
 int _strcmp(char *s1, char *s2)
 {
 	int sone = _strlen(s1), stwo = _strlen(s2);
