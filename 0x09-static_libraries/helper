@@ -1,0 +1,2 @@
+#!/bin/bash
+find ~/alx-low_level_programming/0x09-static_libraries -maxdepth 1 -type f -exec chmod +x {} +
