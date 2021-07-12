@@ -5,6 +5,7 @@
  * main - program that multiplies two numbers
  * @argc: arguments count
  * @argv: array of arguments
+ * Return: 1 when error
  * exit: EXIT_SUCCESS
  */
 

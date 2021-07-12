@@ -25,7 +25,7 @@ return (0);
  * main - program that adds positive numbers.
  * @argc: arguments count
  * @argv: array of arguments
- * return: 1 if argument are not digits
+ * Return: 1 if argument are not digits
  * exit: EXIT_SUCCESS on success
  */
 
