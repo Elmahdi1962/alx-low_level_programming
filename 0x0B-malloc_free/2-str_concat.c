@@ -40,17 +40,23 @@ char *str_concat(char *s1, char *s2)
 	if (p == NULL)
 		return (NULL);
 
-	while (*s1 && s1 != NULL)
+	if (s1 != NULL)
+	{
+	while (*s1)
 	{
 		*p = *s1;
 		s1++;
 		p++;
 	}
-	while (*s2 && s2 != NULL)
+	}
+	if (s2 != NULL)
+	{
+	while (*s2)
 	{
 		*p = *s2;
 		s2++;
 		p++;
+	}
 	}
 	p -= l1 + l2;
 	return (p);
