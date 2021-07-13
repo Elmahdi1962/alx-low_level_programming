@@ -38,10 +38,10 @@ char *_strdup(char *str)
 	int s = _strlen(str);
 	char *p;
 
-	if (str == NULL)
+	if (!str)
 		return (NULL);
-	
-	p = (char *)malloc(s);
+
+	p = (char *)malloc(s + 1);
 	if (p == NULL)
 		return (NULL);
 
