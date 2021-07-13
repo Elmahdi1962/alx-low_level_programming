@@ -1,5 +1,29 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include "holberton.h"
+
+/**
+ * _strlen - return length of string
+ *
+ * @s: string to count
+ *
+ * Return: the size
+ */
+
+
+int _strlen(char *s)
+{
+	int counter = 0;
+
+	while (*s != 0)
+	{
+		counter++;
+		s++;
+	}
+	return (counter);
+}
+
+
 
 /**
  * *_strdup - returns a pointer to a newly allocated space in memory,
@@ -11,7 +35,7 @@
 
 char *_strdup(char *str)
 {
-	int s = sizeof(str);
+	int s = _strlen(str);
 	char *p;
 
 	if (str == NULL)
@@ -20,9 +44,9 @@ char *_strdup(char *str)
 	if (p == NULL)
 		return (NULL);
 
-	while (s >= 0)
+	while (s)
 	{
-		p[s] = str[s];
+		p[s - 1] = str[s - 1];
 		s--;
 	}
 	return (p);
