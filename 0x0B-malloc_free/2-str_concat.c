@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "holberton.h"
 
 
@@ -54,6 +53,5 @@ char *str_concat(char *s1, char *s2)
 		p++;
 	}
 	p -= l1 + l2;
-	printf("p = %s", p);
 	return (p);
 }
