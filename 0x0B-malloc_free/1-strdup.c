@@ -35,10 +35,10 @@ int _strlen(char *s)
 
 char *_strdup(char *str)
 {
-	int s = _strlen(str);
+	int s = str != NULL ? _strlen(str) : 0;
 	char *p;
 
-	if (!str)
+	if (str == NULL)
 		return (NULL);
 
 	p = (char *)malloc(s + 1);
