@@ -40,5 +40,5 @@ if (m == 0)
 
 _memset(m, 0, nmemb * size);
 
-return (m);
+exit(m);
 }
