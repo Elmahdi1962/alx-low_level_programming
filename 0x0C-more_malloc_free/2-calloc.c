@@ -38,7 +38,7 @@ m = malloc(nmemb * size);
 if (m == 0)
 	return (NULL);
 
-_memset(m, 0, nmemb * size);
+_memset(m, 0, nmemb);
 
 return (m);
 }
