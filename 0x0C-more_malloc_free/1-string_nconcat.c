@@ -2,8 +2,6 @@
 #include <stdlib.h>
 
 
-
-
 /**
  * _strlen - return length of string
  *
@@ -57,7 +55,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	}
 
 	for (j = 0; j < n; j++, i++)
-		*(p + i) = s2[j];
+		p[i] = s2[j];
 
+	p[i] = 0;
 	return (p);
 }
