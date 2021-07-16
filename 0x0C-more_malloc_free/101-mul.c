@@ -64,8 +64,8 @@ void multiply(char *f, char *s)
 		printf("%i", ptr[i]);
 	printf("\n");
 
-	for (i = 0; i < total; i++)
-		free(ptr[i]);
+	for (i = 0; i < total; ptr++)
+		free(ptr);
 
 	free(ptr);
 }
