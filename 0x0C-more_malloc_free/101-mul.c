@@ -114,7 +114,10 @@ if (!nmemb || !size)
 return (NULL);
 ptr = malloc(size * nmemb);
 if (!ptr)
+{
+free(ptr);
 return (NULL);
+}
 _memset(ptr, 0, size * nmemb);
 return (ptr);
 }
