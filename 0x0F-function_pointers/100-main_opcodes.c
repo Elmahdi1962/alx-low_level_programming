@@ -2,32 +2,39 @@
 #include <stdlib.h>
 
 /**
- * main - prints the opcodes of its own main function.
- * @argc: number of arguments
- * @argv: array of arguments in string format
- * Return: 0
+ * main - entry point
+ *
+ * @argc: argument count
+ *
+ * @argv: argument vector
+ *
+ * Return: always 0
  */
-
 int main(int argc, char *argv[])
 {
-	int (*p)(int, char **) = &main;
-	int b, i;
-
-	if (argc != 2)
-	{
-		printf("Error\n");
-		exit(1);
-	}
-	b = atoi(argv[1]);
-	if (b < 0)
-	{
-		printf("Error\n");
-		exit(2);
-	}
-
-	for (i = 0; i < b; i++)
-		printf("%02x ", *((unsigned char *)(p + i)));
-	printf("\n");
-	return (0);
-
+int i, n;
+if (argc != 2)
+{
+printf("Error\n");
+return (1);
+}
+n = atoi(argv[1]);
+if (n < 0)
+{
+printf("Error\n");
+exit(2);
+}
+for (i = 0; i < n; i++)
+{
+printf("%02hhx", *((char *)main + i));
+if (i < n - 1)
+{
+printf(" ");
+}
+else
+{
+printf("\n");
+}
+}
+return (0);
 }
