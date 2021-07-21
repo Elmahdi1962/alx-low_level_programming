@@ -10,7 +10,7 @@
 
 int main(int argc, char *argv[])
 {
-	unsigned char *p = (unsigned char *)&main;
+	int (*p)(int, char **) = &main;
 	int b, i;
 
 	if (argc != 2)
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	}
 
 	for (i = 0; i < b; i++)
-		printf("%02hhx ", p[i]);
+		printf("%02hhx ", (unsigned char)*((char *)p + i));
 	printf("\n");
 	return (0);
 
