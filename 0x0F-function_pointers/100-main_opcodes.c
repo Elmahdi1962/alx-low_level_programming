@@ -28,7 +28,6 @@ int main(int argc, char *argv[])
 	for (i = 0; i < b; i++)
 		printf("%02x%c",
 		       *((unsigned char *)(p + i)), i < b - 1 ? ' ' : '\n');
-	printf("\n");
 	return (0);
 
 }
