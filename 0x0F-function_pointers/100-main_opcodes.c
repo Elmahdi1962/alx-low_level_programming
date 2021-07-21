@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 	}
 
 	for (i = 0; i < b; i++)
-		printf("%02x ", (unsigned char)*((char *)p + i));
+		printf("%02x ", (unsigned char)*((char *)(p + i)));
 	printf("\n");
 	return (0);
 
