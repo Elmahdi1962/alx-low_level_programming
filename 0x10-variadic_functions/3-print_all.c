@@ -1,9 +1,6 @@
-#include "variadic_functions.h"
 #include <stdarg.h>
 #include <stdio.h>
-#include <stdlib.h>
-
-
+#include "variadic_functions.h"
 
 /**
  * print_char - Prints a character from an arguments list
@@ -14,8 +11,6 @@ void print_char(va_list *args)
 	printf("%c", va_arg(*args, int));
 }
 
-
-
 /**
  * print_integer - Prints an integer from an arguments list
  * @args: The arguments list
@@ -25,8 +20,6 @@ void print_integer(va_list *args)
 	printf("%d", va_arg(*args, int));
 }
 
-
-
 /**
  * print_float - Prints a float from an arguments list
  * @args: The arguments list
@@ -35,8 +28,6 @@ void print_float(va_list *args)
 {
 	printf("%f", va_arg(*args, double));
 }
-
-
 
 /**
  * print_string - Prints a character array from an arguments list
@@ -51,42 +42,35 @@ void print_string(va_list *args)
 	printf("%s", str);
 }
 
-
-
 /**
- * print_all - prints anything
- * @format: list of types of arguments passed to the function
- *
- * Return: void
+ * print_all - Prints anything
+ * @format: A list of types of arguments passed to the function
  */
-
 void print_all(const char * const format, ...)
 {
-	va_list ap;
-	int i = 0, j;
-	fh formaters[] = {
+	unsigned int i;
+	unsigned int j;
+	va_list args;
+	fmt_printer_t fmt_printers[] = {
 		{'c', print_char},
 		{'i', print_integer},
 		{'f', print_float},
-		{'s', print_string}
+		{'s', print_string},
 	};
 
-	va_start(ap, format);
-
-	while (format[i] != '\0')
+	va_start(args, format);
+	i = 0;
+	while (*(format + i) != '\0')
 	{
 		j = 0;
 		while (j < 4)
 		{
-			if (format[i] == (formaters + j)->format)
-			{
-				(formaters + j)->printer(&ap);
-				break;
-			}
+			if (*(format + i) == (fmt_printers + j)->type)
+				(fmt_printers + j)->func(&args);
 			j++;
 		}
 		i++;
 	}
 	printf("\n");
-	va_end(ap);
+	va_end(args);
 }
