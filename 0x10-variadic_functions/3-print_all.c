@@ -63,6 +63,7 @@ void print_string(va_list *args)
 void print_all(const char * const format, ...)
 {
 	va_list ap;
+	char *sep = "";
 	int i = 0, j;
 	fh formaters[] = {
 		{'c', print_char},
@@ -80,9 +81,12 @@ void print_all(const char * const format, ...)
 		{
 			if (format[i] == (formaters + j)->format)
 			{
+				printf("%s", sep);
 				(formaters + j)->printer(&ap);
+				sep = ", ";
 				break;
 			}
+
 			j++;
 		}
 		i++;
