@@ -1,5 +1,5 @@
 #include "variadic_functions.h"
-#include <stdarg.h>
+11;rgb:0000/0000/0000#include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -69,7 +69,8 @@ void print_all(const char * const format, ...)
 		{'c', print_char},
 		{'i', print_integer},
 		{'f', print_float},
-		{'s', print_string}
+		{'s', print_string},
+		{NULL, NULL}
 	};
 
 	va_start(ap, format);
