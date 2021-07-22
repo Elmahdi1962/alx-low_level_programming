@@ -1,16 +1,14 @@
-section .data
-	msg db 'Hello, Holberton', 0x0a
-	len equ $ - msg
-	n_line DB 0AH,0DH,"$"   ;for new line
+          global    main
 
-section .text
-	global main
+          section   .text
+main:   mov       rax, 1                  ; system call for write
+          mov       rdi, 1                  ; file handle 1 is stdout
+          mov       rsi, message            ; address of string to output
+          mov       rdx, 13                 ; number of bytes
+          syscall                           ; invoke operating system to do the write
+          mov       rax, 60                 ; system call for exit
+          xor       rdi, rdi                ; exit code 0
+          syscall                           ; invoke operating system to exit
 
-main:
-	mov edx, len
-	mov ecx, msg     ;message to write
-	mov ebx, 1 ;file descriptor (stdout)
-	mov eax, 4 ;system call number (sys_write)
-	int 0x80 ;call kernel
-	mov eax, 1 ;system call number (sys_exit)
-	int 0x80 ;call kernel
+          section   .data
+message:  db        "Hello, World", 10      ; note the newline at the end
