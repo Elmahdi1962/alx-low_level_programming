@@ -1,5 +1,5 @@
 #include "variadic_functions.h"
-11;rgb:0000/0000/0000#include <stdarg.h>
+#include <stdarg.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -63,24 +63,24 @@ void print_string(va_list *args)
 void print_all(const char * const format, ...)
 {
 	va_list ap;
+	const char *form = format;
 	char *sep = "";
 	int i = 0, j;
 	fh formaters[] = {
 		{'c', print_char},
 		{'i', print_integer},
 		{'f', print_float},
-		{'s', print_string},
-		{NULL, NULL}
+		{'s', print_string}
 	};
 
 	va_start(ap, format);
 
-	while (format[i] != '\0')
+	while (form && form[i] != '\0')
 	{
 		j = 0;
 		while (j < 4)
 		{
-			if (format[i] == (formaters + j)->format)
+			if (form[i] == (formaters + j)->format)
 			{
 				printf("%s", sep);
 				(formaters + j)->printer(&ap);
