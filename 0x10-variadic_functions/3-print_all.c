@@ -3,6 +3,56 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+
+/**
+ * print_char - Prints a character from an arguments list
+ * @args: The arguments list
+ */
+void print_char(va_list *args)
+{
+	printf("%c", va_arg(*args, int));
+}
+
+
+
+/**
+ * print_integer - Prints an integer from an arguments list
+ * @args: The arguments list
+ */
+void print_integer(va_list *args)
+{
+	printf("%d", va_arg(*args, int));
+}
+
+
+
+/**
+ * print_float - Prints a float from an arguments list
+ * @args: The arguments list
+ */
+void print_float(va_list *args)
+{
+	printf("%f", va_arg(*args, double));
+}
+
+
+
+/**
+ * print_string - Prints a character array from an arguments list
+ * @args: The arguments list
+ */
+void print_string(va_list *args)
+{
+	char *str = va_arg(*args, char *);
+
+	if (!str)
+		str = "(nil)";
+	printf("%s", str);
+}
+
+
+
 /**
  * print_all - prints anything
  * @format: list of types of arguments passed to the function
@@ -13,45 +63,30 @@
 void print_all(const char * const format, ...)
 {
 	va_list ap;
-	int i = 0, isformat = 0;
-	char *string;
+	int i = 0, j;
+	fh formaters[] = {
+		{'c', print_char},
+		{'i', print_integer},
+		{'f', print_float},
+		{'s', print_string}
+	};
 
 	va_start(ap, format);
 
 	while (format[i] != '\0')
 	{
-		switch(format[i])
+		j = 0;
+		while (j < 4)
 		{
-		case 'c':
-			printf("%c", va_arg(ap, int));
-			isformat = 1;
-			break;
-		case 'i':
-			printf("%i", va_arg(ap, int));
-			isformat = 1;
-			break;
-		case 'f':
-			printf("%f", va_arg(ap, double));
-			isformat = 1;
-			break;
-		case 's':
-			string = va_arg(ap, char *);
-			isformat = 1;
-			if (string != NULL)
-				printf("%s", string);
-			else
-				printf("(nil)");
-			break;
-		default:
-			isformat = 0;
-			break;
+			if (format[i] == (formaters + j)->format)
+			{
+				(formaters + j)->printer(&ap);
+				break;
+			}
+			j++;
 		}
-
-		if (format[i + 1] != '\0' && isformat)
-			printf(", ");
-		else if (isformat)
-			printf("\n");
-
-		++i;
+		i++;
 	}
+	printf("\n");
+	va_end(ap);
 }
