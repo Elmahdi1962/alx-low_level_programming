@@ -81,8 +81,6 @@ void print_all(const char * const format, ...)
 			if (format[i] == (formaters + j)->format)
 			{
 				(formaters + j)->printer(&ap);
-				if (format[i + 1] != '\0')
-					printf(", ");
 				break;
 			}
 			j++;
