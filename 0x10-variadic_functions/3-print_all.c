@@ -40,7 +40,7 @@ void print_all(const char * const format, ...)
 			if (string != NULL)
 				printf("%s", string);
 			else
-				printf("nil");
+				printf("(nil)");
 			break;
 		default:
 			isformat = 0;
