@@ -1,12 +1,12 @@
 #ifndef VARIADIC_FUNCTIONS_H
 #define VARIADIC_FUNCTIONS_H
 #include <stdarg.h>
-struct format_printer
+typedef struct format_handler
 {
-	char type;
-	void (*func)(va_list *args_list);
-};
-typedef struct format_printer fmt_printer_t;
+	char format;
+	void (*printer)(va_list *args_list);
+} fh;
+
 int _putchar(char c);
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
