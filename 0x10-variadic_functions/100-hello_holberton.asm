@@ -1,5 +1,5 @@
 section .data
-	msg db 'Hello, Holberton', 0xa
+	msg db 'Hello, Holberton', 0x0a
 	len equ $ - msg
 	n_line DB 0AH,0DH,"$"   ;for new line
 
