@@ -1,6 +1,14 @@
 #ifndef VARIADIC_FUNCTIONS_H
 #define VARIADIC_FUNCTIONS_H
 #include <stdarg.h>
+
+/**
+ * struct format_handler - struct handles format and there callbacks
+ *
+ * @format: the format
+ * @printer: callback
+ */
+
 typedef struct format_handler
 {
 	char format;
