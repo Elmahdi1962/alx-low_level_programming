@@ -11,9 +11,8 @@
 size_t print_listint(const listint_t *h)
 {
 	const listint_t *current;
-	register size_t ncount = 0;
 
-	current = h;
+	register size_t ncount = 0;
 
 	while (current)
 	{
