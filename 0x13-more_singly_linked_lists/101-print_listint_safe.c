@@ -11,6 +11,7 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	int diff;
+
 	register int nodeCount = 0;
 
 	while (head)
