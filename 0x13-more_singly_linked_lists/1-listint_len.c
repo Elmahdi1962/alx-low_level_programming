@@ -3,7 +3,7 @@
 /**
  * listint_len - returns the number of elements in a linked listint_t list
  *
- * @h; head of the list
+ * @h: head of the list
  *
  * Return: returns the number of elements in a linked listint_t list
  */
