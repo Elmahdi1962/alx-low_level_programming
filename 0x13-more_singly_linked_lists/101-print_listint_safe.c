@@ -10,5 +10,23 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
+	int diff;
+	register int nodeCount = 0;
 
+	while (head)
+	{
+		diff = head - head->next;
+		nodeCount++;
+		printf("[%p] %i\n", (void *)head, head->n);
+		if (diff > 0)
+			head = head->next;
+		else
+		{
+			printf("-> [%p] %i\n", (void *)head->next,
+			       head->next->n);
+			break;
+		}
+
+	}
+	return (nodeCount);
 }
