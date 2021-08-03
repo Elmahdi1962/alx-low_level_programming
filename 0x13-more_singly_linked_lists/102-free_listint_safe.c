@@ -11,7 +11,7 @@
 
 size_t free_listint_safe(listint_t **h)
 {
-	listint_t *current = *h, *loopNode = find_listint_loop(*h);
+	listint_t *current = *h, *loopNode = find_listint_loop_h(*h);
 	size_t nodeCount = 0;
 	int loop = 1;
 
