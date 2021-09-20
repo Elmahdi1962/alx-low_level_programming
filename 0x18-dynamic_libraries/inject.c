@@ -1,20 +1,5 @@
 #include <unistd.h>
 
-/**
- * printf - printf
- * @format: format
- * Return: 0
- */
-int printf(__attribute__((unused))const char *format, ...)
-{
-	int f = 0;
-
-	if (!f)
-		write(1, "9 8 10 24 75 - 9\n", 17);
-
-	f = 1;
-	return (0);
-}
 
 /**
  * puts - puts
