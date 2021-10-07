@@ -11,32 +11,31 @@
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	int idx;
-	hash_node_t *hn;
-	char *k = malloc(sizeof(char) * strlen(key));
-	char *val = malloc(sizeof(char) * strlen(value));
+	hash_node_t *node;
 
-	if (key == NULL || strlen(key) == 0)
+	if (key == NULL || strlen(key) == 0 || ht == NULL)
 		return (0);
 
 	idx = key_index((const unsigned char *) key, ht->size);
-	hn = malloc(sizeof(hash_node_t));
 
-	if (hn == NULL)
-		return (0);
-
-	strcpy(k, key);
-	strcpy(val, value);
-	hn->key = k;
-	hn->value = val;
-
-	if (ht->array[idx] == NULL || ht->array[idx] == 0)
+	node = ht->array[idx];
+	while (node != NULL)
 	{
-		ht->array[idx] = hn;
-		hn->next = NULL;
-	} else
-	{
-		hn->next = ht->array[idx];
-		ht->array[idx] = hn;
+		if (strcmp(node->key, key) == 0)
+		{
+			free(node->value);
+			node->value = strdup(value);
+			return (1);
+		}
+		node = node->next;
 	}
+
+	node = malloc(sizeof(hash_node_t));
+	if (node == NULL)
+		return (0);
+	node->key = strdup(key);
+	node->value = strdup(value);
+	node->next = ht->array[idx];
+	ht->array[idx] = node;
 	return (1);
 }
