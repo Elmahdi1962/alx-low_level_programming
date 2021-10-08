@@ -20,8 +20,6 @@ void hash_table_print(const hash_table_t *ht)
 	printf("{");
 	for (i = 0; i < ht->size; i++)
 	{
-		if (ht->array[i] == 0 || ht->array[i] == NULL)
-			continue;
 		node = ht->array[i];
 		if (flag == 1 && node != NULL)
 			printf(", ");
