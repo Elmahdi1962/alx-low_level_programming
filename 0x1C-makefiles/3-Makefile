@@ -11,9 +11,7 @@ all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
 
 clean:
-	$(RM)$(NAME)
-	$(RM) *~
-	$(RM) #*#
+	$(RM) *~ $(NAME)
 
 oclean:
 	$(RM) $(OBJ)
