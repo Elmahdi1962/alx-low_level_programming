@@ -22,7 +22,7 @@ def island_perimeter(grid):
                 # bottom sides
                 if grid[index + 1][idx] != 1:
                     total += 1  # add bottom side of the cell
-                last_fc = current_fc.copy()
-                current_fc = []
+        last_fc = current_fc.copy()
+        current_fc = []
 
     return total
