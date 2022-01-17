@@ -3,20 +3,6 @@
 
 
 /**
- * min - finds smaller number
- * @a: number a
- * @b: numberb
- * Return: the smaller
- */
-
-int min(int a, int b)
-{
-	if (a < b)
-		return (a);
-	return (b);
-}
-
-/**
  * jump_search - searches for a value in a sorted array
  * of integers using the Jump search algorithm
  * @array: pointer to the first element of the array
@@ -30,28 +16,32 @@ int min(int a, int b)
 
 int jump_search(int *array, size_t size, int value)
 {
-	int step = sqrt((int)size);
-	int prev = 0;
+	int step = 0;
+	int prev = 0, i = 0;
 
-	while (array[min(step, (int)size) - 1] < value)
+	if (array == NULL)
+		return (-1);
+
+	while (step < (int)size && array[step] < value)
 	{
+		printf("Value checked array[%i] = [%i]\n", step, array[step]);
 		prev = step;
-		step += step;
+		step += (int)(sqrt(size));
 		if (prev >= (int)size)
 			return (-1);
-		printf("aValue checked array[%i] = [%i]\n", prev, array[prev]);
 	}
 
-	while (array[prev] < value)
+	printf("Value found between indexes [%i] and [%i]\n", prev, step);
+
+	if (step > (int)(size - 1))
+		step = (int)size - 1;
+
+	for (i = prev; i <= step && array[i] <= value; i++)
 	{
-		prev++;
-		if (prev == min(step, (int)size))
-			return (-1);
-		printf("bValue checked array[%i] = [%i]\n", prev, array[prev]);
+		printf("Value checked array[%i] = [%i]\n", i, array[i]);
+		if (array[i] == value)
+			return (i);
 	}
-
-	if (array[prev] == value)
-		return (prev);
 
 	return (-1);
 }
