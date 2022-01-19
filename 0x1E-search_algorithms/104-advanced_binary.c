@@ -48,7 +48,7 @@ int binary_search_ex(int *array, int value, int first, int last)
 	if (array == NULL)
 		return (-1);
 
-	while (first_idx <= last_idx)
+	if (first_idx <= last_idx)
 	{
 		printf("Searching in array:");
 		for (i = first_idx; i <= last_idx; i++)
@@ -62,9 +62,9 @@ int binary_search_ex(int *array, int value, int first, int last)
 		mid = (int)((first_idx + last_idx) / 2);
 
 		if (value > array[mid])
-			first_idx = mid + 1;
-		else if (value < array[mid])
-			last_idx = mid - 1;
+			return (binary_search_ex(array, value, mid + 1, last_idx));
+		if (value < array[mid])
+			return (binary_search_ex(array, value, first_idx, mid - 1));
 		else
 		{
 			if (value == array[mid - 1])
